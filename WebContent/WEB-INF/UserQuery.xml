@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Querys>
+
+	<!-- Create table employee Query -->
+	<query id="create_user_table">
+        <![CDATA[
+            CREATE TABLE user(
+				userID varchar(50) not null, 
+				name varchar(50),  	
+				userAddress varchar(50),
+				e_mail varchar(50),
+				username varchar(50),
+				Password  varchar(50),
+				primary key (userID)
+			)
+        ]]>
+	</query>
+
+	<!-- DROP TABLE EMPLOYEES Query -->
+	<!-- query id="drop_table">
+         <![CDATA[        
+            DROP TABLE IF EXISTS user 
+        ]]>
+	</query-->
+
+	<!-- Select all customer orders Query -->
+	<query id="insert_user">
+        <![CDATA[
+          	insert into user (UserID, name, userAddress, e_mail, username, Password) 
+          	values (?, ?, ?, ?, ?, ?)
+          
+        ]]>
+	</query>
+	
+	<!-- Select a particular employee by id Query -->
+	<query id="user_by_id">
+         <![CDATA[        
+            select * from user where user.userID = ?
+        ]]>
+	</query>
+
+	<!-- Select all employees -->
+	<query id="all_users">
+         <![CDATA[        
+            select * from user
+        ]]>
+	</query>
+
+	<!-- Delete a particular employee by id Query -->
+	<query id="remove_user">
+         <![CDATA[        
+            delete from user where user.userID = ?
+        ]]>
+	</query>
+	
+	<!-- Update a particular employee by id Query -->
+	<query id="update_user">
+         <![CDATA[        
+            update user as e 
+            set e.name = ?, e.userAddress = ?, e.e_mail = ?, e.username = ?, e.Password = ?
+            where e.userID = ?
+        ]]>
+	</query>
+	
+		<!-- Get employee IDs Query -->
+	<query id="user_ids">
+         <![CDATA[        
+            select e.UserID from User as e
+        ]]>
+	</query>
+
+</Querys>

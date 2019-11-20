@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<element>
+<Querys>
+	<!-- insert payment details to payment table -->
+	<query id="insert_payment">
+        <![CDATA[
+          	insert into payment (paymentID, type, card, cardNumber, cvv, email, balance) 
+          	values (?, ?, ?, ?, ?, ?, ?)
+        ]]>
+	</query>
+	
+	<!-- <query id="validate_payment">
+        <![CDATA[
+          	select p.paymentID, p.type , p.card, p.cardNumber, p.cvv, p.email, p.balance
+          	from payment p, bank b
+          	where p.card = ? and p.type = ? and p.cardNumber = ? and p.cvv = ?
+        ]]>
+	</query> -->
+
+	<!-- Select a particular payment by id Query -->
+	<query id="payment_by_id">
+         <![CDATA[        
+            select * 
+            from payment as p 
+            where p.paymentID = ?
+        ]]>
+	</query>
+
+	<!-- Select all payments -->
+	<query id="all_payments">
+         <![CDATA[        
+            select * from payment
+        ]]>
+	</query>
+
+	<!-- Delete a particular payment -->
+	<query id="remove_payment">
+         <![CDATA[        
+            delete from payment 
+            where payment.paymentID = ?
+        ]]>
+	</query>
+	
+	<!-- Update a particular payment-->
+	<query id="update_payment">
+         <![CDATA[        
+            update payment as p 
+            set p.type = ?, p.card = ?, p.cardNumber = ?, p.cvv = ?, p.email = ?
+            where p.paymentID = ?
+        ]]>
+	</query>
+	
+		<!-- Get payment IDs-->
+	<query id="payment_ids">
+         <![CDATA[        
+            select p.paymentID 
+            from payment as p
+        ]]>
+	</query>
+	
+	<query id="payment_balance">
+         <![CDATA[        
+            select p.balance 
+            from payment as p
+        ]]>
+	</query>
+</Querys>
+</element>

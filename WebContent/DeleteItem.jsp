@@ -1,0 +1,46 @@
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import ="event.util.DBConnection" %>
+
+<%
+    if(request.getParameter("delete_id")!=null) //get delete_id from index.jsp page with href link and check not null after continue
+    {
+        int id=Integer.parseInt(request.getParameter("delete_id")); //get delete_id store in "id" variable
+        
+        /*String url="jdbc:mysql://localhost:3306/oop"; //database connection url string
+        String username="root"; //database connection username
+        String password=""; //database password*/
+        
+        try
+        {
+            //Class.forName("com.mysql.jdbc.Driver"); //load driver
+            //Connection con=DriverManager.getConnection(url,username,password); //create connection
+            
+            //PreparedStatement pstmt=null; //create statement
+            
+            DBConnection db = new DBConnection();
+        	Connection con = null;
+        	con=db.getConnection();
+        	
+	        PreparedStatement pstmt=null; //create statement
+            
+            pstmt=con.prepareStatement("delete from items where eventID=? "); //sql delete query
+            pstmt.setInt(1,id);
+            pstmt.executeUpdate(); //execute query
+
+            RequestDispatcher rd=request.getRequestDispatcher("Item.jsp");
+            rd.forward(request, response); 
+            
+            pstmt.close(); 
+            
+            con.close();  
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
+        
+    }
+%>
+ 

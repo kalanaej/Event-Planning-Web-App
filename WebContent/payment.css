@@ -1,0 +1,124 @@
+@CHARSET "ISO-8859-1";
+
+body {
+   line-height: 1;
+	font-family: 'Tahoma', Arial;
+	background-image:url("Images/card-background.jpg");
+	background-size:cover;
+	margin: 0;
+    padding: 0;
+}
+
+
+.frm{
+	padding: 5px 20px 15px 20px;
+ 	border: 1px solid lightgrey;
+  	border-radius: 10px;
+  	width:550px;
+  	background-color:rgba(0,0,0,0.8);
+  	color:white;
+  	margin-top:200px;
+  	margin-left:380px;
+}
+
+.add-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 17px;
+}
+.add-button:hover {
+  background-color: #45a049;
+}
+
+.reset-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 8px;
+  border: none;
+  float:left;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 17px;
+}
+.reset-button:hover {
+  background-color: #45a049;
+}
+
+.list-button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 8px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-right:164px;
+  font-size: 17px;
+}
+
+.list-button:hover {
+  background-color: #45a049;
+}
+
+.txtnumber{
+	
+ 	border: 1px solid #ccc;
+ 	border-radius: 5px;
+}
+.txtcvv{
+		
+ 	border: 1px solid #ccc;
+ 	border-radius: 5px;
+}
+.txtemail{
+	
+ 	border: 1px solid #ccc;
+ 	border-radius: 5px;
+}
+
+.select-button{
+	background-color: white; 
+    color: black; 
+    border: 2px solid #4CAF50;
+}
+
+.select-button:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.delete-button{
+	background-color: white; 
+    color: black; 
+    border: 2px solid #4CAF50;
+}
+
+.delete-button:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.bk{
+	background-color: white; 
+    color: black; 
+    border: 2px solid #4CAF50;
+}
+
+.bk:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.update-button{
+	background-color: white; 
+    color: black; 
+    border: 2px solid #4CAF50;
+}
+
+.update-button:hover {
+    background-color: #4CAF50;
+    color: white;
+}
